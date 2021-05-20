@@ -4,7 +4,7 @@
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
 }
-
+/* Comienza mobile first */
 header {
   width: 100vw;
   height: 80px;
@@ -13,6 +13,9 @@ header {
   justify-content: space-between;
   align-items: center;
 }
+/* body{
+  overflow: hidden;
+} */
 
 .logo {
   text-decoration: none;
@@ -22,15 +25,40 @@ header {
   margin-left: 20px;
 }
 header nav{
-  width: 0%;
+  width: 0;
   height: 100%;
   top: 80px;
   right: 0;
   background: #008F95;
   position: absolute;
+  overflow: hidden;
+  transition: 0.3s ease-in-out;
 }
-.mostrar{
-  width: 100%;
+
+
+nav ol {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1.5rem;
+  list-style: none;
+}
+
+nav ol  li {
+  
+  line-height: 100px;
+  
+}
+nav ol li  a {
+  
+  text-decoration: none;
+  text-align: justify;
+  text-transform: uppercase;
+  color: rgb(242, 242, 242) ;
+  font-size: 20px;
+}
+
+nav ol li > a:hover {
+color: white;
 }
 .menu_toggle {
   background: none;
@@ -38,4 +66,48 @@ header nav{
   color: white;
   font-size: 25px;
   margin-right: 20px;
+}
+  .mostrar{
+    width: 100vw;
+    
+  }
+
+  /* termina mobile first */
+
+@media only screen and (min-width:768px){
+    
+    .menu_toggle{
+      display: none;
+    }
+    
+    header nav {
+      /* background: red;   */
+      width: 80%;
+      top: 0;
+      position: relative;
+      font-size: 25px;
+    }
+    nav ol {
+      flex-direction: row;
+      height: 80px;
+      align-items: center;    
+      justify-content: flex-end;
+    } 
+    nav ol li{
+      padding: 0 30px;
+    }
+    nav ol li ul li a{
+      display: block;
+      
+    }
+    nav ol li a {
+      display: block;
+
+    }
+
+    nav li a:hover {
+      background-color: #434343;
+    }
+
+    
 }
